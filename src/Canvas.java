@@ -1,5 +1,8 @@
-public class Canvas {
+import javax.swing.JPanel;
+
+public class Canvas extends JPanel {
     private volatile static Canvas uniqueInstance;
+    Mode mode = null;
 
     private Canvas() {
     }
@@ -13,6 +16,12 @@ public class Canvas {
             }
         }
         return uniqueInstance;
+    }
+
+    protected void setMode(Mode m) {
+        removeMouseListener(mode);
+        mode = m;
+        addMouseListener(mode);
     }
 
     protected void printTest() {
