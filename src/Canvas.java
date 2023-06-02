@@ -1,11 +1,8 @@
-import java.util.ArrayList;
-
 import javax.swing.JPanel;
 
 public class Canvas extends JPanel {
     private volatile static Canvas uniqueInstance;
     Mode mode = null;
-    private ArrayList<AllObject> Objects = new ArrayList<>();
 
     private Canvas() {
     }
@@ -28,7 +25,7 @@ public class Canvas extends JPanel {
     }
 
     protected void addComponent(AllObject obj) {
-        Objects.add(obj);
+        System.out.println(getComponents().length);
         add(obj);
         repaint();
     }

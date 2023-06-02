@@ -1,3 +1,4 @@
+import java.awt.Component;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 
@@ -7,13 +8,10 @@ public class ButtonMenu extends JPanel {
 
     private volatile static ButtonMenu uniqueInstance;
 
-    private ArrayList<Button> buttons = new ArrayList<>();
-
     private ButtonMenu() {
         setLayout(new GridLayout(6, 1));
-        buttons.add(new ClassButton());
-        buttons.add(new UseCaseButton());
-        initButtons();
+        add(new ClassButton());
+        add(new UseCaseButton());
     }
 
     public static ButtonMenu getInstance() {
@@ -28,14 +26,8 @@ public class ButtonMenu extends JPanel {
     }
 
     protected void setBtnWhite() {
-        for (Button btn : buttons) {
-            btn.setWhite();
-        }
-    }
-
-    private void initButtons() {
-        for (Button btn : buttons) {
-            add(btn);
+        for (Component btn : getComponents()) {
+            ((Button) btn).setWhite();
         }
     }
 }
