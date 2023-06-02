@@ -4,6 +4,6 @@ public class UseCaseButton extends Button {
     }
 
     protected void setMode() {
-        Canvas.getInstance().setMode(new ObjectMode());
+        Canvas.getInstance().setMode(new UseCaseMode());
     }
 }

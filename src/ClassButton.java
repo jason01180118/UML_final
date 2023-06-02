@@ -4,6 +4,6 @@ public class ClassButton extends Button {
     }
 
     protected void setMode() {
-        Canvas.getInstance().setMode(new ObjectMode());
+        Canvas.getInstance().setMode(new ClassMode());
     }
 }

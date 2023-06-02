@@ -1,11 +1,17 @@
 import java.awt.event.MouseEvent;
 
-public class ObjectMode extends Mode {
+public abstract class ObjectMode extends Mode {
+
+    AllObject obj = null;
+
     public void mousePressed(MouseEvent me) {
-        Canvas.getInstance().add(new Classes(me.getX(), me.getY()));
-        Canvas.getInstance().repaint();
+        setClass(me.getX(), me.getY());
+        Canvas.getInstance().addComponent(obj);
     }
 
     public void mouseReleased(MouseEvent me) {
+    }
+
+    public void setClass(int x, int y) {
     }
 }

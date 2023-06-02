@@ -12,6 +12,7 @@ public class ButtonMenu extends JPanel {
     private ButtonMenu() {
         setLayout(new GridLayout(6, 1));
         buttons.add(new ClassButton());
+        buttons.add(new UseCaseButton());
         initButtons();
     }
 
