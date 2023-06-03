@@ -3,6 +3,7 @@ public class UseCaseButton extends Button {
         setText("UseCase");
     }
 
+    @Override
     protected void setMode() {
         Canvas.getInstance().setMode(new UseCaseMode());
     }

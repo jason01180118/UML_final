@@ -31,6 +31,5 @@ public class Button extends JButton {
     }
 
     protected void setMode() {
-        Canvas.getInstance().setMode(null);
     }
 }

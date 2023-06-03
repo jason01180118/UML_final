@@ -1,6 +1,5 @@
 import java.awt.Component;
 import java.awt.GridLayout;
-import java.util.ArrayList;
 
 import javax.swing.JPanel;
 
@@ -12,6 +11,10 @@ public class ButtonMenu extends JPanel {
         setLayout(new GridLayout(6, 1));
         add(new ClassButton());
         add(new UseCaseButton());
+        add(new AssociationButton());
+        add(new CompositionButton());
+        add(new GeneralizationButton());
+        add(new SelectButton());
     }
 
     public static ButtonMenu getInstance() {

@@ -3,6 +3,7 @@ public class ClassButton extends Button {
         setText("classes");
     }
 
+    @Override
     protected void setMode() {
         Canvas.getInstance().setMode(new ClassMode());
     }
