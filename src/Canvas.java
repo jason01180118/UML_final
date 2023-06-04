@@ -1,3 +1,4 @@
+import java.awt.Component;
 import javax.swing.JLayeredPane;
 
 public class Canvas extends JLayeredPane {
@@ -25,9 +26,16 @@ public class Canvas extends JLayeredPane {
     }
 
     protected void addComponent(AllObject obj, int layer) {
-        System.out.println(getComponents().length);
+        System.out.println(getComponentCountInLayer(0));
+        System.out.println(getComponentCountInLayer(1));
         add(obj, layer);
         repaint();
+    }
+
+    protected void setUnSelect() {
+        for (Component component : getComponentsInLayer(1)) {
+            ((AllObject) component).setUnSelect();
+        }
     }
 
 }

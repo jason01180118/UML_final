@@ -30,4 +30,23 @@ public class BaseObject extends AllObject {
         return result;
     }
 
+    @Override
+    protected void setSelect() {
+        selected = true;
+        setPortVisible();
+    }
+
+    @Override
+    protected void setUnSelect() {
+        selected = false;
+        setPortVisible();
+
+    }
+
+    private void setPortVisible() {
+        for (Component component : getComponents()) {
+            ((Port) component).setVisible(selected);
+        }
+    }
+
 }

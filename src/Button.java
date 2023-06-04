@@ -9,6 +9,7 @@ public class Button extends JButton {
 
     MouseAdapter clickEvent = new MouseAdapter() {
         public void mousePressed(MouseEvent me) {
+            Canvas.getInstance().setUnSelect();
             ButtonMenu.getInstance().setBtnWhite();
             setBlack();
             setMode();
