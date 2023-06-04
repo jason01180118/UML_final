@@ -1,3 +1,3 @@
-public class CompositionMode {
+public class CompositionMode extends ConnectionLineMode {
 
 }

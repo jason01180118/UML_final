@@ -1,6 +1,6 @@
 import java.awt.event.MouseEvent;
 
-public abstract class ObjectMode extends Mode {
+public abstract class BaseObjectMode extends Mode {
 
     AllObject obj = null;
 
