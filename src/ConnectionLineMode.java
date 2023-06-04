@@ -8,14 +8,13 @@ public class ConnectionLineMode extends Mode {
     private Port endPort = null;
 
     protected AllObject obj = null;
-    private final int layer = -1;
+    private final int LAYER = -1;
 
     public void mousePressed(MouseEvent me) {
         if (Canvas.getInstance().findComponentAt(me.getPoint()) != Canvas.getInstance()) {
             startObject = (AllObject) Canvas.getInstance().findComponentAt(me.getPoint());
             startPort = startObject.getPort(me.getPoint());
         }
-        System.out.println(startObject);
 
     }
 
@@ -27,8 +26,7 @@ public class ConnectionLineMode extends Mode {
         if (startObject != endObject && startObject != null && endObject != null) {
             setClass(startObject.getX() + startPort.getX(), startObject.getY() + startPort.getY(),
                     endObject.getX() + endPort.getX(), endObject.getY() + endPort.getY());
-            Canvas.getInstance().addComponent(obj, layer);
-            System.out.println("createline");
+            Canvas.getInstance().addComponent(obj, LAYER);
         }
         reset();
     }

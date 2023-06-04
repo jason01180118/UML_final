@@ -3,11 +3,11 @@ import java.awt.event.MouseEvent;
 public abstract class BaseObjectMode extends Mode {
 
     protected AllObject obj = null;
-    private final int layer = 0;
+    private final int LAYER = 0;
 
     public void mousePressed(MouseEvent me) {
         setClass(me.getX(), me.getY());
-        Canvas.getInstance().addComponent(obj, layer);
+        Canvas.getInstance().addComponent(obj, LAYER);
     }
 
     public void mouseReleased(MouseEvent me) {

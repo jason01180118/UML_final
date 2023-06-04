@@ -5,6 +5,6 @@ public class AssociationButton extends Button {
 
     @Override
     protected void setMode() {
-        Canvas.getInstance().setMode(null);
+        Canvas.getInstance().setMode(new AssociationMode());
     }
 }
