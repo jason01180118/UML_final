@@ -1,6 +1,6 @@
-import javax.swing.JPanel;
+import javax.swing.JLayeredPane;
 
-public class Canvas extends JPanel {
+public class Canvas extends JLayeredPane {
     private volatile static Canvas uniqueInstance;
     Mode mode = null;
 
@@ -24,9 +24,9 @@ public class Canvas extends JPanel {
         addMouseListener(mode);
     }
 
-    protected void addComponent(AllObject obj) {
+    protected void addComponent(AllObject obj, int layer) {
         System.out.println(getComponents().length);
-        add(obj);
+        add(obj, layer);
         repaint();
     }
 

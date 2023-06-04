@@ -1,3 +1,6 @@
+import java.awt.Component;
+import java.awt.Point;
+import java.awt.geom.Point2D;
 
 public class BaseObject extends AllObject {
 
@@ -10,6 +13,21 @@ public class BaseObject extends AllObject {
         add(new Port(WIDTH / 2, 0));
         add(new Port(WIDTH / 2, HEIGHT - Port.HEIGHT));
         add(new Port(WIDTH - Port.WIDTH, HEIGHT / 2));
+    }
+
+    @Override
+    protected Port getPort(Point point) {
+        Port result = null;
+        double minDistance = Double.MAX_VALUE;
+        for (Component component : getComponents()) {
+            Port port = (Port) component;
+            double distance = Point2D.distance(point.x - getX(), point.y - getY(), port.getX(), port.getY());
+            if (minDistance > distance) {
+                result = port;
+                minDistance = distance;
+            }
+        }
+        return result;
     }
 
 }
