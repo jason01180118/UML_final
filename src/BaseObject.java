@@ -8,6 +8,8 @@ public class BaseObject extends AllObject {
     final int HEIGHT = 110;
 
     BaseObject(int x, int y) {
+        this.x = x;
+        this.y = y;
         setBounds(x, y, WIDTH, HEIGHT);
         add(new Port(0, HEIGHT / 2));
         add(new Port(WIDTH / 2, 0));
@@ -41,6 +43,13 @@ public class BaseObject extends AllObject {
         selected = false;
         setPortVisible();
 
+    }
+
+    @Override
+    protected void moveXY(int offsetX, int offsetY) {
+        x = x + offsetX;
+        y = y + offsetY;
+        setLocation(x, y);
     }
 
     private void setPortVisible() {

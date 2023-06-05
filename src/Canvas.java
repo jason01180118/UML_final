@@ -2,6 +2,7 @@ import java.awt.Component;
 import java.awt.Point;
 import java.awt.Rectangle;
 
+import javax.sound.sampled.SourceDataLine;
 import javax.swing.JLayeredPane;
 
 public class Canvas extends JLayeredPane {
@@ -63,6 +64,14 @@ public class Canvas extends JLayeredPane {
             if (bounds.x >= minX && maxX >= bounds.x + bounds.width && bounds.y >= minY
                     && maxY >= bounds.y + bounds.height) {
                 ((AllObject) component).setSelect();
+            }
+        }
+    }
+
+    protected void moveSelectedObj(int offsetX, int offsetY) {
+        for (Component component : getComponentsInLayer(1)) {
+            if (((AllObject) component).selected) {
+                ((AllObject) component).moveXY(offsetX, offsetY);
             }
         }
     }

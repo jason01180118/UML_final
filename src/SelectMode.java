@@ -27,18 +27,14 @@ public class SelectMode extends Mode {
 
     @Override
     public void mouseDragged(MouseEvent me) {
-        System.out.println("drag");
         if (Canvas.getInstance().countSelected() != 0) {
-            System.out.println(me.getPoint().x - buffer.x);
-            System.out.println(me.getPoint().y - buffer.y);
-            // Canvas.getInstance().moveSelectedObj(me.getPoint().x-buffer.x,me.getPoint().y-buffer.y);
+            Canvas.getInstance().moveSelectedObj(me.getPoint().x - buffer.x, me.getPoint().y - buffer.y);
             buffer = me.getPoint();
         }
     }
 
     @Override
     public void mouseReleased(MouseEvent me) {
-        System.out.println("release");
         endPoint = me.getPoint();
         if (Canvas.getInstance().countSelected() == 0) {
             Canvas.getInstance().setSelectArea(startPoint, endPoint);

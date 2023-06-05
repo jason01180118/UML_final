@@ -5,6 +5,8 @@ import javax.swing.JPanel;
 public abstract class AllObject extends JPanel {
 
     protected boolean selected = false;
+    int x;
+    int y;
 
     AllObject() {
         setLayout(null);
@@ -20,6 +22,10 @@ public abstract class AllObject extends JPanel {
     }
 
     protected void setUnSelect() {
+
+    }
+
+    protected void moveXY(int offsetX, int offsetY) {
 
     }
 }
