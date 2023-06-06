@@ -8,7 +8,9 @@ public abstract class AllObject extends JPanel {
     int x;
     int y;
 
-    AllObject() {
+    AllObject(int x, int y) {
+        this.x = x;
+        this.y = y;
         setLayout(null);
         setOpaque(false);
     }
@@ -27,5 +29,9 @@ public abstract class AllObject extends JPanel {
 
     protected void moveXY(int offsetX, int offsetY) {
 
+    }
+
+    protected boolean isRelated() {
+        return false;
     }
 }

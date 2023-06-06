@@ -1,7 +1,7 @@
 public class Composite extends AllObject {
 
-    Composite() {
-
+    Composite(int x, int y) {
+        super(x, y);
     }
 
 }

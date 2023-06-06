@@ -4,8 +4,8 @@ import java.awt.Graphics2D;
 import java.awt.geom.Point2D;
 
 public class AssociationLine extends ConnectionLine {
-    AssociationLine(int startX, int startY, int endX, int endY) {
-        super(startX, startY, endX, endY);
+    AssociationLine(int x, int y, AllObject startObject, AllObject endObject, Port startPort, Port endPort) {
+        super(x, y, startObject, endObject, startPort, endPort);
     }
 
     @Override

@@ -5,8 +5,8 @@ import java.awt.geom.Point2D;
 
 public class CompositionLine extends ConnectionLine {
 
-    CompositionLine(int startX, int startY, int endX, int endY) {
-        super(startX, startY, endX, endY);
+    CompositionLine(int x, int y, AllObject startObject, AllObject endObject, Port startPort, Port endPort) {
+        super(x, y, startObject, endObject, startPort, endPort);
     }
 
     @Override

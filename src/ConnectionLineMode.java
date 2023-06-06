@@ -2,14 +2,16 @@ import java.awt.event.MouseEvent;
 
 public class ConnectionLineMode extends Mode {
 
-    private AllObject startObject = null;
-    private AllObject endObject = null;
-    private Port startPort = null;
-    private Port endPort = null;
+    protected AllObject startObject = null;
+    protected AllObject endObject = null;
+    protected Port startPort = null;
+    protected Port endPort = null;
 
     protected AllObject obj = null;
     private final int ORDER = 0;
     private final int LAYER = 0;
+    protected final int X = 0;
+    protected final int Y = 0;
 
     public void mousePressed(MouseEvent me) {
         if (Canvas.getInstance().findComponentAt(me.getPoint()) != Canvas.getInstance()) {
@@ -25,8 +27,7 @@ public class ConnectionLineMode extends Mode {
             endPort = endObject.getPort(me.getPoint());
         }
         if (startObject != endObject && startObject != null && endObject != null) {
-            setClass(startObject.getX() + startPort.getX(), startObject.getY() + startPort.getY(),
-                    endObject.getX() + endPort.getX(), endObject.getY() + endPort.getY());
+            setClass();
             Canvas.getInstance().addComponent(obj, ORDER);
             Canvas.getInstance().setLayer(obj, LAYER);
         }
@@ -40,6 +41,6 @@ public class ConnectionLineMode extends Mode {
         endPort = null;
     }
 
-    public void setClass(int startX, int startY, int endX, int endY) {
+    public void setClass() {
     }
 }

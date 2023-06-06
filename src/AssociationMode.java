@@ -1,6 +1,6 @@
 public class AssociationMode extends ConnectionLineMode {
     @Override
-    public void setClass(int startX, int startY, int endX, int endY) {
-        obj = new AssociationLine(startX, startY, endX, endY);
+    public void setClass() {
+        obj = new AssociationLine(X, Y, startObject, endObject, startPort, endPort);
     }
 }
