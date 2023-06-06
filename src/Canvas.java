@@ -72,8 +72,8 @@ public class Canvas extends JLayeredPane {
         for (Component component : getComponentsInLayer(1)) {
             if (((AllObject) component).selected) {
                 for (Component insideComponent : getComponentsInLayer(0)) {
-                    if (((AllObject) insideComponent).isRelated()) {
-                        ((AllObject) component).moveXY(offsetX, offsetY);
+                    if (((AllObject) insideComponent).isRelated(((AllObject) component))) {
+                        ((AllObject) insideComponent).setXY();
                     }
                 }
                 ((AllObject) component).moveXY(offsetX, offsetY);

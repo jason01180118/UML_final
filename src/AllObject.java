@@ -31,7 +31,10 @@ public abstract class AllObject extends JPanel {
 
     }
 
-    protected boolean isRelated() {
+    protected void setXY() {
+    }
+
+    protected boolean isRelated(AllObject obj) {
         return false;
     }
 }

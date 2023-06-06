@@ -16,18 +16,23 @@ public class ConnectionLine extends AllObject {
         this.endObject = endObject;
         this.startPort = startPort;
         this.endPort = endPort;
-        initLocation();
+        setXY();
     }
 
-    private void initLocation() {
+    @Override
+    protected void setXY() {
         startX = startObject.getX() + startPort.getX();
         startY = startObject.getY() + startPort.getY();
         endX = endObject.getX() + endPort.getX();
         endY = endObject.getY() + endPort.getY();
+        repaint();
     }
 
     @Override
-    protected boolean isRelated() {
+    protected boolean isRelated(AllObject obj) {
+        if (startObject == obj || endObject == obj) {
+            return true;
+        }
         return false;
     }
 }

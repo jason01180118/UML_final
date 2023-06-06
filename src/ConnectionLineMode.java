@@ -26,7 +26,8 @@ public class ConnectionLineMode extends Mode {
             endObject = (AllObject) Canvas.getInstance().findComponentAt(me.getPoint());
             endPort = endObject.getPort(me.getPoint());
         }
-        if (startObject != endObject && startObject != null && endObject != null) {
+        if (startObject != endObject && startObject != null && endObject != null && startPort != null
+                && endPort != null) {
             setClass();
             Canvas.getInstance().addComponent(obj, ORDER);
             Canvas.getInstance().setLayer(obj, LAYER);
