@@ -12,20 +12,20 @@ public class ConnectionLineMode extends Mode {
     private final int LAYER = 0;
 
     public void mousePressed(MouseEvent me) {
-        if (Canvas.getInstance().findComponentAt(me.getPoint()) != Canvas.getInstance()) {
-            startObject = (AllObject) Canvas.getInstance().findComponentAt(me.getPoint());
+        startObject = Canvas.getInstance().getObjectAt(me.getPoint());
+        if (startObject != null) {
             startPort = startObject.getPort(me.getPoint());
         }
 
     }
 
     public void mouseReleased(MouseEvent me) {
-        if (Canvas.getInstance().findComponentAt(me.getPoint()) != Canvas.getInstance()) {
-            endObject = (AllObject) Canvas.getInstance().findComponentAt(me.getPoint());
+        endObject = Canvas.getInstance().getObjectAt(me.getPoint());
+        if (endObject != null) {
             endPort = endObject.getPort(me.getPoint());
         }
-        if (startObject != endObject && startObject != null && endObject != null && startPort != null
-                && endPort != null) {
+
+        if (startObject != endObject && startPort != null && endPort != null) {
             setClass();
             Canvas.getInstance().addComponent(obj, ORDER);
             Canvas.getInstance().setLayer(obj, LAYER);

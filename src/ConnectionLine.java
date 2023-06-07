@@ -22,10 +22,10 @@ public class ConnectionLine extends AllObject {
 
     @Override
     protected void setXY() {
-        startX = startObject.getX() + startPort.getX();
-        startY = startObject.getY() + startPort.getY();
-        endX = endObject.getX() + endPort.getX();
-        endY = endObject.getY() + endPort.getY();
+        startX = startObject.absoluteX + startPort.getX();
+        startY = startObject.absoluteY + startPort.getY();
+        endX = endObject.absoluteX + endPort.getX();
+        endY = endObject.absoluteY + endPort.getY();
         repaint();
     }
 

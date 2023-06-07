@@ -11,8 +11,9 @@ public class SelectMode extends Mode {
     @Override
     public void mousePressed(MouseEvent me) {
 
-        if (Canvas.getInstance().findComponentAt(me.getPoint()) != Canvas.getInstance()) {
-            obj = (AllObject) Canvas.getInstance().findComponentAt(me.getPoint());
+        obj = Canvas.getInstance().getObjectAt(me.getPoint());
+        if (obj != null) {
+
             System.out.println(obj);
             if (!obj.selected) {
                 Canvas.getInstance().setUnSelect();

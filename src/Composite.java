@@ -26,7 +26,15 @@ public class Composite extends AllObject {
     protected void moveXY(int offsetX, int offsetY) {
         x = x + offsetX;
         y = y + offsetY;
+        changeAbsoluteXY(offsetX, offsetY);
         setLocation(x, y);
+    }
+
+    @Override
+    protected void changeAbsoluteXY(int offsetX, int offsetY) {
+        for (Component component : getComponents()) {
+            ((AllObject) component).changeAbsoluteXY(offsetX, offsetY);
+        }
     }
 
     @Override
@@ -40,10 +48,27 @@ public class Composite extends AllObject {
         }
         x = startX;
         y = startY;
+        absoluteX = x;
+        absoluteY = y;
         setBounds(startX, startY, endX - startX, endY - startY);
         for (Component component : getComponents()) {
-            ((AllObject) component).moveXY(startX * -1, startY * -1);
+            ((AllObject) component).changeXY(component.getX() - x, component.getY() - y);
         }
         repaint();
+    }
+
+    @Override
+    protected void repaintLine() {
+        for (Component component : getComponents()) {
+            ((AllObject) component).repaintLine();
+        }
+    }
+
+    @Override
+    protected void setUnGroup() {
+        for (Component component : getComponents()) {
+            ((AllObject) component).changeXY(component.getX() + x, component.getY() + y);
+            Canvas.getInstance().addComponent(((AllObject) component), 1);
+        }
     }
 }

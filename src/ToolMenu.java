@@ -15,6 +15,14 @@ public class ToolMenu extends JMenuBar {
         }
     };
 
+    private MouseAdapter unGroupPressAdapter = new MouseAdapter() {
+        @Override
+        public void mousePressed(MouseEvent me) {
+            Canvas.getInstance().unGroupObject();
+
+        }
+    };
+
     ToolMenu() {
         super();
         JMenu m1 = new JMenu("File");
@@ -29,6 +37,7 @@ public class ToolMenu extends JMenuBar {
         m2.add(m33);
 
         m11.addMouseListener(groupPressAdapter);
+        m22.addMouseListener(unGroupPressAdapter);
 
     }
 

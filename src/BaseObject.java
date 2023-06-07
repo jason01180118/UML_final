@@ -10,6 +10,8 @@ public class BaseObject extends AllObject {
     BaseObject(int x, int y) {
         this.x = x;
         this.y = y;
+        absoluteX = x;
+        absoluteY = y;
         setBounds(x, y, WIDTH, HEIGHT);
         add(new Port(0, HEIGHT / 2));
         add(new Port(WIDTH / 2, 0));
@@ -49,7 +51,19 @@ public class BaseObject extends AllObject {
     protected void moveXY(int offsetX, int offsetY) {
         x = x + offsetX;
         y = y + offsetY;
+        changeAbsoluteXY(offsetX, offsetY);
         setLocation(x, y);
+    }
+
+    @Override
+    protected void changeAbsoluteXY(int offsetX, int offsetY) {
+        absoluteX = absoluteX + offsetX;
+        absoluteY = absoluteY + offsetY;
+    }
+
+    @Override
+    protected void repaintLine() {
+        Canvas.getInstance().repaintLine(this);
     }
 
     private void setPortVisible() {
