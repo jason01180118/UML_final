@@ -4,14 +4,12 @@ public class ConnectionLineMode extends Mode {
 
     protected AllObject startObject = null;
     protected AllObject endObject = null;
-    protected Port startPort = null;
-    protected Port endPort = null;
+    protected AllObject startPort = null;
+    protected AllObject endPort = null;
 
     protected AllObject obj = null;
     private final int ORDER = 0;
     private final int LAYER = 0;
-    protected final int X = 0;
-    protected final int Y = 0;
 
     public void mousePressed(MouseEvent me) {
         if (Canvas.getInstance().findComponentAt(me.getPoint()) != Canvas.getInstance()) {

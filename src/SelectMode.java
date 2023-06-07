@@ -13,7 +13,7 @@ public class SelectMode extends Mode {
 
         if (Canvas.getInstance().findComponentAt(me.getPoint()) != Canvas.getInstance()) {
             obj = (AllObject) Canvas.getInstance().findComponentAt(me.getPoint());
-            System.out.println(obj.selected);
+            System.out.println(obj);
             if (!obj.selected) {
                 Canvas.getInstance().setUnSelect();
                 obj.setSelect();

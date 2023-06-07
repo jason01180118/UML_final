@@ -2,9 +2,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 
-import javax.swing.JLabel;
-
-public class Port extends JLabel {
+public class Port extends AllObject {
 
     static final int WIDTH = 5;
     static final int HEIGHT = 5;

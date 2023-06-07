@@ -8,7 +8,8 @@ public class BaseObject extends AllObject {
     final int HEIGHT = 110;
 
     BaseObject(int x, int y) {
-        super(x, y);
+        this.x = x;
+        this.y = y;
         setBounds(x, y, WIDTH, HEIGHT);
         add(new Port(0, HEIGHT / 2));
         add(new Port(WIDTH / 2, 0));

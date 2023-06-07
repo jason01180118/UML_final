@@ -1,8 +1,8 @@
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Point;
 import java.awt.Rectangle;
 
-import javax.sound.sampled.SourceDataLine;
 import javax.swing.JLayeredPane;
 
 public class Canvas extends JLayeredPane {
@@ -78,6 +78,24 @@ public class Canvas extends JLayeredPane {
                 }
                 ((AllObject) component).moveXY(offsetX, offsetY);
             }
+        }
+    }
+
+    protected void groupObject() {
+        if (countSelected() > 1) {
+            AllObject compositeObj = new Composite();
+            for (Component component : getComponentsInLayer(1)) {
+
+                if (((AllObject) component).selected) {
+                    ((AllObject) component).setUnSelect();
+                    compositeObj.add(component);
+                    remove(component);
+
+                }
+            }
+            compositeObj.setXY();
+            addComponent(compositeObj, 0);
+            setLayer(compositeObj, 1);
         }
     }
 

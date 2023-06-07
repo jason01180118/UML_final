@@ -1,8 +1,20 @@
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
 public class ToolMenu extends JMenuBar {
+
+    private MouseAdapter groupPressAdapter = new MouseAdapter() {
+        @Override
+        public void mousePressed(MouseEvent me) {
+            Canvas.getInstance().groupObject();
+
+        }
+    };
+
     ToolMenu() {
         super();
         JMenu m1 = new JMenu("File");
@@ -16,5 +28,8 @@ public class ToolMenu extends JMenuBar {
         m2.add(m22);
         m2.add(m33);
 
+        m11.addMouseListener(groupPressAdapter);
+
     }
+
 }

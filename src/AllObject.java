@@ -8,9 +8,7 @@ public abstract class AllObject extends JPanel {
     int x;
     int y;
 
-    AllObject(int x, int y) {
-        this.x = x;
-        this.y = y;
+    AllObject() {
         setLayout(null);
         setOpaque(false);
     }
