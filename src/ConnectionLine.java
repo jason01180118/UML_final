@@ -6,10 +6,10 @@ public class ConnectionLine extends AllObject {
     protected int endY;
     protected AllObject startObject = null;
     protected AllObject endObject = null;
-    protected AllObject startPort = null;
-    protected AllObject endPort = null;
+    protected Port startPort = null;
+    protected Port endPort = null;
 
-    ConnectionLine(AllObject startObject, AllObject endObject, AllObject startPort, AllObject endPort) {
+    ConnectionLine(AllObject startObject, AllObject endObject, Port startPort, Port endPort) {
         x = 0;
         y = 0;
         setBounds(x, y, Canvas.getInstance().getWidth(), Canvas.getInstance().getHeight());

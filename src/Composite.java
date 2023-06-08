@@ -65,10 +65,11 @@ public class Composite extends AllObject {
     }
 
     @Override
-    protected void setUnGroup() {
+    protected boolean setUnGroup() {
         for (Component component : getComponents()) {
             ((AllObject) component).changeXY(component.getX() + x, component.getY() + y);
             Canvas.getInstance().addComponent(((AllObject) component), 1);
         }
+        return true;
     }
 }

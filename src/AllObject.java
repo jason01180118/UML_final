@@ -52,7 +52,10 @@ public abstract class AllObject extends JPanel {
 
     }
 
-    protected void setUnGroup() {
+    protected boolean setUnGroup() {
+        return false;
+    }
 
+    protected void changeName(String name) {
     }
 }

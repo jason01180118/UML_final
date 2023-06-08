@@ -4,7 +4,7 @@ import java.awt.Graphics2D;
 import java.awt.geom.Point2D;
 
 public class GeneralizationLine extends ConnectionLine {
-    GeneralizationLine(AllObject startObject, AllObject endObject, AllObject startPort, AllObject endPort) {
+    GeneralizationLine(AllObject startObject, AllObject endObject, Port startPort, Port endPort) {
         super(startObject, endObject, startPort, endPort);
     }
 

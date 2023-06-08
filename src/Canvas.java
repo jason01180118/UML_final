@@ -1,4 +1,3 @@
-import java.awt.Color;
 import java.awt.Component;
 import java.awt.Point;
 import java.awt.Rectangle;
@@ -32,9 +31,6 @@ public class Canvas extends JLayeredPane {
     }
 
     protected void addComponent(AllObject obj, int layer) {
-        System.out.println(getComponentCount());
-        System.out.println(getComponentCountInLayer(0));
-        System.out.println(getComponentCountInLayer(1));
         add(obj, layer);
         repaint();
     }
@@ -121,8 +117,22 @@ public class Canvas extends JLayeredPane {
             for (Component component : getComponentsInLayer(1)) {
 
                 if (((AllObject) component).selected) {
-                    ((AllObject) component).setUnGroup();
-                    remove(component);
+                    if (((AllObject) component).setUnGroup()) {
+                        remove(component);
+                    }
+
+                }
+            }
+        }
+    }
+
+    protected void changeName(String name) {
+        if (countSelected() == 1) {
+            for (Component component : getComponentsInLayer(1)) {
+
+                if (((AllObject) component).selected) {
+                    ((AllObject) component).changeName(name);
+
                 }
             }
         }

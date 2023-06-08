@@ -4,8 +4,8 @@ public class ConnectionLineMode extends Mode {
 
     protected AllObject startObject = null;
     protected AllObject endObject = null;
-    protected AllObject startPort = null;
-    protected AllObject endPort = null;
+    protected Port startPort = null;
+    protected Port endPort = null;
 
     protected AllObject obj = null;
     private final int ORDER = 0;
