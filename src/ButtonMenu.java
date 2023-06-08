@@ -1,5 +1,7 @@
 import java.awt.Component;
 import java.awt.GridLayout;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.JPanel;
 
@@ -7,7 +9,17 @@ public class ButtonMenu extends JPanel {
 
     private volatile static ButtonMenu uniqueInstance;
 
-    private ButtonMenu() {
+    MouseAdapter clickEvent = new MouseAdapter() {
+        public void mousePressed(MouseEvent me) {
+            Canvas.getInstance().setUnSelect();
+            setBtnWhite();
+            ((Button) getComponentAt(me.getPoint())).setBlack();
+            ((Button) getComponentAt(me.getPoint())).setMode();
+        }
+
+    };
+
+    public ButtonMenu() {
         setLayout(new GridLayout(6, 1));
         add(new ClassButton());
         add(new UseCaseButton());
@@ -15,17 +27,7 @@ public class ButtonMenu extends JPanel {
         add(new CompositionButton());
         add(new GeneralizationButton());
         add(new SelectButton());
-    }
-
-    public static ButtonMenu getInstance() {
-        if (uniqueInstance == null) {
-            synchronized (ButtonMenu.class) {
-                if (uniqueInstance == null) {
-                    uniqueInstance = new ButtonMenu();
-                }
-            }
-        }
-        return uniqueInstance;
+        addMouseListener(clickEvent);
     }
 
     protected void setBtnWhite() {

@@ -4,21 +4,14 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 
-public class Button extends JButton {
-
-    MouseAdapter clickEvent = new MouseAdapter() {
-        public void mousePressed(MouseEvent me) {
-            Canvas.getInstance().setUnSelect();
-            ButtonMenu.getInstance().setBtnWhite();
-            setBlack();
-            setMode();
-        }
-
-    };
+public class Button extends JLabel {
 
     Button() {
-        addMouseListener(clickEvent);
+        setOpaque(true);
+        setWhite();
     }
 
     public void setWhite() {
@@ -29,6 +22,7 @@ public class Button extends JButton {
     public void setBlack() {
         setBackground(Color.BLACK);
         setForeground(Color.WHITE);
+        repaint();
     }
 
     protected void setMode() {
