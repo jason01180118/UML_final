@@ -4,7 +4,7 @@ import javax.swing.ImageIcon;
 
 public class AssociationButton extends Button {
     AssociationButton() {
-        setIcon(new ImageIcon("icon/select.jpg"));
+        setIcon(new ImageIcon("icon/association_line.jpg"));
         setText("AssociationButton");
     }
 
