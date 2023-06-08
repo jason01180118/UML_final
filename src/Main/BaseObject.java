@@ -1,6 +1,5 @@
 package Main;
 
-import java.awt.Component;
 import java.awt.Point;
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
