@@ -3,6 +3,10 @@ package Main;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 
+import Item.GroupItem;
+import Item.SetNameItem;
+import Item.UnGroupItem;
+
 public class ToolMenu extends JMenuBar {
 
     ToolMenu() {

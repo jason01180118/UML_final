@@ -6,6 +6,10 @@ import java.awt.Rectangle;
 
 import javax.swing.JLayeredPane;
 
+import Mode.Mode;
+import Object.AllObject;
+import Object.Composite;
+
 public class Canvas extends JLayeredPane {
     private volatile static Canvas uniqueInstance;
     Mode mode = null;
@@ -24,7 +28,7 @@ public class Canvas extends JLayeredPane {
         return uniqueInstance;
     }
 
-    protected void setMode(Mode m) {
+    public void setMode(Mode m) {
         removeMouseListener(mode);
         removeMouseMotionListener(mode);
         mode = m;
@@ -32,12 +36,12 @@ public class Canvas extends JLayeredPane {
         addMouseMotionListener(mode);
     }
 
-    protected void addComponent(AllObject obj, int layer) {
+    public void addComponent(AllObject obj, int layer) {
         add(obj, layer);
         repaint();
     }
 
-    protected AllObject getObjectAt(Point p) {
+    public AllObject getObjectAt(Point p) {
         AllObject returnObj = null;
         for (Component component : getComponentsInLayer(1)) {
             Rectangle bounds = ((AllObject) component).getBounds();
@@ -49,13 +53,13 @@ public class Canvas extends JLayeredPane {
         return returnObj;
     }
 
-    protected void setUnSelect() {
+    public void setUnSelect() {
         for (Component component : getComponentsInLayer(1)) {
             ((AllObject) component).setUnSelect();
         }
     }
 
-    protected int countSelected() {
+    public int countSelected() {
         int count = 0;
         for (Component component : getComponentsInLayer(1)) {
             if (((AllObject) component).selected) {
@@ -65,7 +69,7 @@ public class Canvas extends JLayeredPane {
         return count;
     }
 
-    protected void setSelectArea(Point startPoint, Point endPoint) {
+    public void setSelectArea(Point startPoint, Point endPoint) {
         int minX = Math.min(startPoint.x, endPoint.x);
         int maxX = Math.max(startPoint.x, endPoint.x);
         int minY = Math.min(startPoint.y, endPoint.y);
@@ -79,7 +83,7 @@ public class Canvas extends JLayeredPane {
         }
     }
 
-    protected void moveSelectedObj(int offsetX, int offsetY) {
+    public void moveSelectedObj(int offsetX, int offsetY) {
         for (Component component : getComponentsInLayer(1)) {
             if (((AllObject) component).selected) {
                 ((AllObject) component).moveXY(offsetX, offsetY);
@@ -88,7 +92,7 @@ public class Canvas extends JLayeredPane {
         }
     }
 
-    protected void repaintLine(AllObject obj) {
+    public void repaintLine(AllObject obj) {
         for (Component component : getComponentsInLayer(0)) {
             if (((AllObject) component).isRelated(obj)) {
                 ((AllObject) component).setXY();
@@ -96,7 +100,7 @@ public class Canvas extends JLayeredPane {
         }
     }
 
-    protected void groupObject() {
+    public void groupObject() {
         if (countSelected() > 1) {
             AllObject compositeObj = new Composite();
             for (Component component : getComponentsInLayer(1)) {
@@ -114,7 +118,7 @@ public class Canvas extends JLayeredPane {
         }
     }
 
-    protected void unGroupObject() {
+    public void unGroupObject() {
         if (countSelected() == 1) {
             for (Component component : getComponentsInLayer(1)) {
 
@@ -128,7 +132,7 @@ public class Canvas extends JLayeredPane {
         }
     }
 
-    protected void changeName(String name) {
+    public void changeName(String name) {
         if (countSelected() == 1) {
             for (Component component : getComponentsInLayer(1)) {
 

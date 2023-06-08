@@ -7,6 +7,14 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.JPanel;
 
+import Button.AssociationButton;
+import Button.Button;
+import Button.ClassButton;
+import Button.CompositionButton;
+import Button.GeneralizationButton;
+import Button.SelectButton;
+import Button.UseCaseButton;
+
 public class ButtonMenu extends JPanel {
 
     MouseAdapter clickEvent = new MouseAdapter() {
