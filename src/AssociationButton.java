@@ -1,5 +1,8 @@
+import javax.swing.ImageIcon;
+
 public class AssociationButton extends Button {
     AssociationButton() {
+        setIcon(new ImageIcon("icon/select.jpg"));
         setText("AssociationButton");
     }
 
