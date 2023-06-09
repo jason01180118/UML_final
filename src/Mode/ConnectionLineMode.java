@@ -33,8 +33,7 @@ public class ConnectionLineMode extends Mode {
 
         if (startObject != endObject && startPort != null && endPort != null) {
             setClass();
-            Canvas.getInstance().addComponent(obj, ORDER);
-            Canvas.getInstance().setLayer(obj, LAYER);
+            Canvas.getInstance().addComponent(obj, ORDER, LAYER);
         }
         reset();
     }

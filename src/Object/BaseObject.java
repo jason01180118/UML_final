@@ -9,7 +9,7 @@ import javax.swing.SwingConstants;
 
 import Main.Canvas;
 
-public class BaseObject extends AllObject {
+public abstract class BaseObject extends AllObject {
 
     final int WIDTH = 110;
     final int HEIGHT = 110;

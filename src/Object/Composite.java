@@ -84,7 +84,7 @@ public class Composite extends AllObject {
     public boolean setUnGroup() {
         for (Component component : getComponents()) {
             ((AllObject) component).changeXY(component.getX() + x, component.getY() + y);
-            Canvas.getInstance().addComponent(((AllObject) component), 1);
+            Canvas.getInstance().addComponent(((AllObject) component), 0, 1);
         }
         return true;
     }

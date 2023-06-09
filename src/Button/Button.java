@@ -6,7 +6,7 @@ import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
-public class Button extends JLabel {
+public abstract class Button extends JLabel {
 
     Button() {
         setOpaque(true);

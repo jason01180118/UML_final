@@ -36,8 +36,9 @@ public class Canvas extends JLayeredPane {
         addMouseMotionListener(mode);
     }
 
-    public void addComponent(AllObject obj, int layer) {
-        add(obj, layer);
+    public void addComponent(AllObject obj, int order, int layer) {
+        add(obj, order);
+        setLayer(obj, layer);
         repaint();
     }
 
@@ -113,8 +114,7 @@ public class Canvas extends JLayeredPane {
                 }
             }
             compositeObj.setXY();
-            addComponent(compositeObj, 0);
-            setLayer(compositeObj, 1);
+            addComponent(compositeObj, 0, 1);
         }
     }
 

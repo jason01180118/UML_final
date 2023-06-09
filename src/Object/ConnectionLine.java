@@ -2,7 +2,7 @@ package Object;
 
 import Main.Canvas;
 
-public class ConnectionLine extends AllObject {
+public abstract class ConnectionLine extends AllObject {
 
     protected int startX;
     protected int startY;

@@ -13,8 +13,7 @@ public abstract class BaseObjectMode extends Mode {
 
     public void mousePressed(MouseEvent me) {
         setClass(me.getX(), me.getY());
-        Canvas.getInstance().addComponent(obj, ORDER);
-        Canvas.getInstance().setLayer(obj, LAYER);
+        Canvas.getInstance().addComponent(obj, ORDER, LAYER);
 
     }
 
