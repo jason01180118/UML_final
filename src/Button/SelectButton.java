@@ -7,7 +7,7 @@ import Mode.SelectMode;
 
 public class SelectButton extends Button {
     public SelectButton() {
-        setIcon(new ImageIcon("icon/select.jpg"));
+        setIcon(new ImageIcon(getResource("icon/select.jpg")));
         setText("Select");
     }
 

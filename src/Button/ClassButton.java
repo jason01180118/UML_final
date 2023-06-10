@@ -7,7 +7,7 @@ import Mode.ClassMode;
 
 public class ClassButton extends Button {
     public ClassButton() {
-        setIcon(new ImageIcon("icon/class.jpg"));
+        setIcon(new ImageIcon(getResource("icon/class.jpg")));
         setText("classes");
     }
 

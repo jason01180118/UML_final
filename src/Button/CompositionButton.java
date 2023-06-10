@@ -7,7 +7,7 @@ import Mode.CompositionMode;
 
 public class CompositionButton extends Button {
     public CompositionButton() {
-        setIcon(new ImageIcon("icon/composition_line.jpg"));
+        setIcon(new ImageIcon(getResource("icon/composition_line.jpg")));
         setText("Composition");
     }
 

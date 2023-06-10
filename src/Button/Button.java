@@ -1,6 +1,7 @@
 package Button;
 
 import java.awt.Color;
+import java.net.URL;
 
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
@@ -30,5 +31,9 @@ public abstract class Button extends JLabel {
     }
 
     public void setMode() {
+    }
+
+    protected URL getResource(String fileName) {
+        return Button.class.getResource(fileName);
     }
 }

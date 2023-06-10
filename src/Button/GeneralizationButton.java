@@ -7,7 +7,7 @@ import Mode.GeneralizationMode;
 
 public class GeneralizationButton extends Button {
     public GeneralizationButton() {
-        setIcon(new ImageIcon("icon/generalization_line.jpg"));
+        setIcon(new ImageIcon(getResource("icon/generalization_line.jpg")));
         setText("Generalization");
     }
 

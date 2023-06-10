@@ -7,7 +7,7 @@ import Mode.UseCaseMode;
 
 public class UseCaseButton extends Button {
     public UseCaseButton() {
-        setIcon(new ImageIcon("icon/use_case.jpg"));
+        setIcon(new ImageIcon(getResource("icon/use_case.jpg")));
         setText("UseCase");
     }
 
