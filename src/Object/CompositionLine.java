@@ -15,7 +15,7 @@ public class CompositionLine extends ConnectionLine {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
-        g2.setStroke(new BasicStroke(3));
+        g2.setStroke(new BasicStroke(STROKE));
         double rotateX = (Math.cos(Math.PI / 4) * (startX - endX) - Math.sin(Math.PI / 4) * (startY - endY));
         double rotateY = (Math.sin(Math.PI / 4) * (startX - endX) + Math.cos(Math.PI / 4) * (startY - endY));
         double distance = Point2D.distance(0, 0, rotateX, rotateY);

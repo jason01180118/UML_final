@@ -13,6 +13,7 @@ public abstract class BaseObject extends AllObject {
 
     final int WIDTH = 110;
     final int HEIGHT = 110;
+    final int STROKE = 2;
 
     private ArrayList<Port> ports = new ArrayList<>();
     private JLabel nameLabel = new JLabel("name", SwingConstants.CENTER);
@@ -24,7 +25,7 @@ public abstract class BaseObject extends AllObject {
         absoluteY = y;
         setBounds(x, y, WIDTH, HEIGHT);
         initPorts();
-        nameLabel.setBounds(5, 5, 100, 100);
+        nameLabel.setBounds(Port.WIDTH, Port.HEIGHT, WIDTH - Port.WIDTH, HEIGHT - Port.HEIGHT);
         add(nameLabel);
     }
 

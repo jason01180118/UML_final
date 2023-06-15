@@ -12,6 +12,7 @@ public abstract class ConnectionLine extends AllObject {
     protected AllObject endObject = null;
     protected Port startPort = null;
     protected Port endPort = null;
+    final int STROKE = 3;
 
     ConnectionLine(AllObject startObject, AllObject endObject, Port startPort, Port endPort) {
         x = 0;
