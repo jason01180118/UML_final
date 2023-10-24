@@ -2,7 +2,7 @@ package sample;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-public class SampleTestSpy {
+public class SampleSpyTest {
     SampleSystemUnderTest sut = new SampleSystemUnderTest();
 
     @Test
