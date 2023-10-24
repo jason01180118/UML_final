@@ -1,10 +1,6 @@
-package sample.item;
+package item;
 
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.*;
-
-import java.awt.event.MouseAdapter;
-
+import main.Canvas;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -12,9 +8,11 @@ import org.mockito.MockedStatic;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import item.GroupItem;
-import item.UnGroupItem;
-import main.Canvas;
+import java.awt.event.MouseAdapter;
+
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mockStatic;
+
 @RunWith(MockitoJUnitRunner.class)
 public class UnGroupItemTest {
     @Mock
@@ -34,7 +32,8 @@ public class UnGroupItemTest {
             // Handle any exceptions.
         }
     }
-        @Test
+
+    @Test
     public void testUnGroupTextSet() {
         try (MockedStatic<Canvas> mockedStaticCanvas = mockStatic(Canvas.class)) {
             mockedStaticCanvas.when(Canvas::getInstance).thenReturn(mockCanvasInstance);

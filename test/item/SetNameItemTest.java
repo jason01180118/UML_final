@@ -1,13 +1,6 @@
-package sample.item;
-import static org.junit.Assert.*;
-import static org.mockito.ArgumentMatchers.*;
-import static org.mockito.Mockito.*;
+package item;
 
-import java.awt.event.MouseAdapter;
-
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-
+import main.Canvas;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -15,8 +8,13 @@ import org.mockito.MockedStatic;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import item.SetNameItem;
-import main.Canvas;
+import javax.swing.*;
+import java.awt.event.MouseAdapter;
+
+import static org.junit.Assert.assertEquals;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.mockStatic;
+
 @RunWith(MockitoJUnitRunner.class)
 public class SetNameItemTest {
     @Mock
@@ -28,11 +26,11 @@ public class SetNameItemTest {
     @Test
     public void testSetNameItemNotNull() {
         try (MockedStatic<Canvas> mockedStaticCanvas = mockStatic(Canvas.class)) {
-            try(MockedStatic<JOptionPane> mockOptionPane = mockStatic(JOptionPane.class)){
+            try (MockedStatic<JOptionPane> mockOptionPane = mockStatic(JOptionPane.class)) {
 
                 mockedStaticCanvas.when(Canvas::getInstance).thenReturn(mockCanvasInstance);
                 mockOptionPane.when(() -> JOptionPane.showInputDialog(any(null), "Enter your message")).thenReturn("NewName");
-                
+
                 setNameItem.addMouseListener(mouseAdapter = Mockito.mock(MouseAdapter.class));
                 mouseAdapter.mousePressed(null);
                 // verify(mockCanvasInstance, times(1)).changeName("NewName");
@@ -50,7 +48,7 @@ public class SetNameItemTest {
     @Test
     public void testSetNameItemNull() {
         try (MockedStatic<Canvas> mockedStaticCanvas = mockStatic(Canvas.class)) {
-            try(MockedStatic<JOptionPane> mockOptionPane = mockStatic(JOptionPane.class)){
+            try (MockedStatic<JOptionPane> mockOptionPane = mockStatic(JOptionPane.class)) {
 
                 mockedStaticCanvas.when(Canvas::getInstance).thenReturn(mockCanvasInstance);
                 mockOptionPane.when(() -> JOptionPane.showInputDialog(any(null), "Enter your message")).thenReturn(null);
