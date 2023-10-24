@@ -1,9 +1,9 @@
-package Button;
+package button;
 
 import javax.swing.ImageIcon;
 
-import Main.Canvas;
-import Mode.SelectMode;
+import main.Canvas;
+import mode.SelectMode;
 
 public class SelectButton extends Button {
     public SelectButton() {

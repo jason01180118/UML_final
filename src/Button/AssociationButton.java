@@ -1,9 +1,9 @@
-package Button;
+package button;
 
 import javax.swing.ImageIcon;
 
-import Main.Canvas;
-import Mode.AssociationMode;
+import main.Canvas;
+import mode.AssociationMode;
 
 public class AssociationButton extends Button {
     public AssociationButton() {

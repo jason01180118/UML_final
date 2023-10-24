@@ -1,4 +1,4 @@
-package Item;
+package item;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
-import Main.Canvas;
+import main.Canvas;
 
 public class SetNameItem extends JMenuItem {
 

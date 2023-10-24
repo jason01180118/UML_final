@@ -1,4 +1,4 @@
-package Sample;
+package sample;
 import org.junit.Test;
 import org.mockito.Mockito;
 

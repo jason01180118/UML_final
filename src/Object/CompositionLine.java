@@ -1,4 +1,4 @@
-package Object;
+package object;
 
 import java.awt.BasicStroke;
 import java.awt.Graphics;

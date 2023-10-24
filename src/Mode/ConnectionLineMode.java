@@ -1,10 +1,10 @@
-package Mode;
+package mode;
 
 import java.awt.event.MouseEvent;
 
-import Main.Canvas;
-import Object.AllObject;
-import Object.Port;
+import main.Canvas;
+import object.AllObject;
+import object.Port;
 
 public class ConnectionLineMode extends Mode {
 

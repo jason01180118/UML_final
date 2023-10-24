@@ -1,9 +1,9 @@
-package Mode;
+package mode;
 
 import java.awt.event.MouseEvent;
 
-import Main.Canvas;
-import Object.AllObject;
+import main.Canvas;
+import object.AllObject;
 
 public abstract class BaseObjectMode extends Mode {
 

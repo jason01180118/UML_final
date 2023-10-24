@@ -1,6 +1,6 @@
-package Mode;
+package mode;
 
-import Object.GeneralizationLine;
+import object.GeneralizationLine;
 
 public class GeneralizationMode extends ConnectionLineMode {
     @Override

@@ -1,6 +1,6 @@
-package Mode;
+package mode;
 
-import Object.CompositionLine;
+import object.CompositionLine;
 
 public class CompositionMode extends ConnectionLineMode {
     @Override

@@ -1,6 +1,6 @@
-package Mode;
+package mode;
 
-import Object.AssociationLine;
+import object.AssociationLine;
 
 public class AssociationMode extends ConnectionLineMode {
     @Override

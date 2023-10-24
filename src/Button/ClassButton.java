@@ -1,9 +1,9 @@
-package Button;
+package button;
 
 import javax.swing.ImageIcon;
 
-import Main.Canvas;
-import Mode.ClassMode;
+import main.Canvas;
+import mode.ClassMode;
 
 public class ClassButton extends Button {
     public ClassButton() {

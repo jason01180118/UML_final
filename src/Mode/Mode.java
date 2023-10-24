@@ -1,4 +1,4 @@
-package Mode;
+package mode;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;

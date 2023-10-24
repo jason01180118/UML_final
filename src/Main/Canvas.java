@@ -1,4 +1,4 @@
-package Main;
+package main;
 
 import java.awt.Component;
 import java.awt.Point;
@@ -6,9 +6,9 @@ import java.awt.Rectangle;
 
 import javax.swing.JLayeredPane;
 
-import Mode.Mode;
-import Object.AllObject;
-import Object.Composite;
+import mode.Mode;
+import object.AllObject;
+import object.Composite;
 
 public class Canvas extends JLayeredPane {
     private volatile static Canvas uniqueInstance;
