@@ -1,4 +1,4 @@
-package test;
+package Sample;
 public class SampleSystemUnderTest {
     private SampleDependedOnClass dependedOnClass;
     public void setSampleDependedOnClass(SampleDependedOnClass dependedOnClass) {

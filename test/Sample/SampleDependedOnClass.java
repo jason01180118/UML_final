@@ -1,4 +1,4 @@
-package test;
+package Sample;
 public class SampleDependedOnClass {
     public String doSomething() {
         return "In inner class's method one";
