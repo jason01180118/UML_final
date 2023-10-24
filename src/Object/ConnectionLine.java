@@ -1,6 +1,6 @@
-package Object;
+package object;
 
-import Main.Canvas;
+import main.Canvas;
 
 public abstract class ConnectionLine extends AllObject {
 

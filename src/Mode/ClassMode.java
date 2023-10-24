@@ -1,6 +1,6 @@
-package Mode;
+package mode;
 
-import Object.Classes;
+import object.Classes;
 
 public class ClassMode extends BaseObjectMode {
     public ClassMode() {

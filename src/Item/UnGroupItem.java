@@ -1,11 +1,11 @@
-package Item;
+package item;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import javax.swing.JMenuItem;
 
-import Main.Canvas;
+import main.Canvas;
 
 public class UnGroupItem extends JMenuItem {
 

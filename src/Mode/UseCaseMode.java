@@ -1,6 +1,6 @@
-package Mode;
+package mode;
 
-import Object.UseCase;
+import object.UseCase;
 
 public class UseCaseMode extends BaseObjectMode {
     @Override

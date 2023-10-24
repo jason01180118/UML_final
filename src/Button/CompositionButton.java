@@ -1,9 +1,9 @@
-package Button;
+package button;
 
 import javax.swing.ImageIcon;
 
-import Main.Canvas;
-import Mode.CompositionMode;
+import main.Canvas;
+import mode.CompositionMode;
 
 public class CompositionButton extends Button {
     public CompositionButton() {

@@ -1,4 +1,4 @@
-package Object;
+package object;
 
 import java.awt.Point;
 import java.awt.geom.Point2D;
@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
-import Main.Canvas;
+import main.Canvas;
 
 public abstract class BaseObject extends AllObject {
 

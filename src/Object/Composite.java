@@ -1,4 +1,4 @@
-package Object;
+package object;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -6,7 +6,7 @@ import java.awt.Rectangle;
 
 import javax.swing.BorderFactory;
 
-import Main.Canvas;
+import main.Canvas;
 
 public class Composite extends AllObject {
 

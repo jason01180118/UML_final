@@ -1,9 +1,9 @@
-package Button;
+package button;
 
 import javax.swing.ImageIcon;
 
-import Main.Canvas;
-import Mode.GeneralizationMode;
+import main.Canvas;
+import mode.GeneralizationMode;
 
 public class GeneralizationButton extends Button {
     public GeneralizationButton() {

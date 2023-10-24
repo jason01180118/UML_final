@@ -1,9 +1,9 @@
-package Button;
+package button;
 
 import javax.swing.ImageIcon;
 
-import Main.Canvas;
-import Mode.UseCaseMode;
+import main.Canvas;
+import mode.UseCaseMode;
 
 public class UseCaseButton extends Button {
     public UseCaseButton() {

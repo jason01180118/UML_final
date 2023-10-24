@@ -1,4 +1,4 @@
-package Main;
+package main;
 
 import java.awt.Component;
 import java.awt.GridLayout;
@@ -7,13 +7,13 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.JPanel;
 
-import Button.AssociationButton;
-import Button.Button;
-import Button.ClassButton;
-import Button.CompositionButton;
-import Button.GeneralizationButton;
-import Button.SelectButton;
-import Button.UseCaseButton;
+import button.AssociationButton;
+import button.Button;
+import button.ClassButton;
+import button.CompositionButton;
+import button.GeneralizationButton;
+import button.SelectButton;
+import button.UseCaseButton;
 
 public class ButtonMenu extends JPanel {
 
