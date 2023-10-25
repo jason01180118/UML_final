@@ -2,6 +2,8 @@ package button;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.atLeastOnce;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.mockStatic;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -9,9 +11,14 @@ import static org.mockito.Mockito.verifyNoMoreInteractions;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.MockedStatic;
 import org.mockito.junit.MockitoJUnitRunner;
 import java.awt.Color;
 import java.net.URL;
+
+import javax.swing.BorderFactory;
+import javax.swing.SwingConstants;
+import javax.swing.border.Border;
 
 class TestButton extends Button {
     public URL testGetResource(String fileName) {
@@ -21,6 +28,25 @@ class TestButton extends Button {
 
 @RunWith(MockitoJUnitRunner.class)
 public class ButtonTest {
+    @Test
+    public void testConstructor() {
+        try (MockedStatic<BorderFactory> mockedStaticBorderFactory = mockStatic(BorderFactory.class)) {
+            Border mockBorder = mock(Border.class);
+            mockedStaticBorderFactory.when(() -> BorderFactory.createLineBorder(Color.black)).thenReturn(mockBorder);
+            // Arrange & Act
+            TestButton testButton = new TestButton();
+
+            // Assert
+            assertEquals(true, testButton.isOpaque());
+            assertEquals(mockBorder, testButton.getBorder());
+            assertEquals(SwingConstants.CENTER, testButton.getHorizontalAlignment());
+            assertEquals(SwingConstants.CENTER, testButton.getVerticalAlignment());
+            assertEquals(SwingConstants.CENTER, testButton.getHorizontalTextPosition());
+            assertEquals(SwingConstants.BOTTOM, testButton.getVerticalTextPosition());
+            assertEquals(Color.WHITE, testButton.getBackground());
+            assertEquals(Color.BLACK, testButton.getForeground());
+        }
+    }
 
     @Test
     public void testSetWhite() {
