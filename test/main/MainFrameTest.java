@@ -27,6 +27,6 @@ public class MainFrameTest {
         assertTrue(components.stream().anyMatch(component -> component instanceof Canvas));
         assertTrue(components.stream().anyMatch(component -> component instanceof ButtonMenu));
         assertTrue(components.stream().anyMatch(component -> component instanceof ToolMenu));
-        assertEquals(true, testMainFrame.isVisible());
+        assertTrue(testMainFrame.isVisible());
     }
 }

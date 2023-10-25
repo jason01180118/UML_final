@@ -1,20 +1,19 @@
 package main;
 
-import static org.junit.Assert.assertTrue;
-
-import java.awt.Component;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import javax.swing.JMenu;
-
+import item.GroupItem;
+import item.SetNameItem;
+import item.UnGroupItem;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import item.GroupItem;
-import item.SetNameItem;
-import item.UnGroupItem;
+import javax.swing.*;
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import static org.junit.Assert.assertTrue;
 
 @RunWith(MockitoJUnitRunner.class)
 public class ToolMenuTest {
@@ -26,11 +25,11 @@ public class ToolMenuTest {
         // Assert
         List<Component> menuList = Arrays.asList(testToolMenu.getComponents());
         assertTrue(menuList.stream()
-                .anyMatch(component -> component instanceof JMenu && ((JMenu) component).getText() == "File"));
+                .anyMatch(component -> component instanceof JMenu && ((JMenu) component).getText().equals("File")));
         assertTrue(menuList.stream()
-                .anyMatch(component -> component instanceof JMenu && ((JMenu) component).getText() == "Edit"));
+                .anyMatch(component -> component instanceof JMenu && ((JMenu) component).getText().equals("Edit")));
         Component editMenu = menuList.stream()
-                .filter(component -> component instanceof JMenu && ((JMenu) component).getText() == "Edit").findAny()
+                .filter(component -> component instanceof JMenu && ((JMenu) component).getText().equals("Edit")).findAny()
                 .get();
         List<Component> editMenuItemList = new ArrayList<>();
         for (int i = 0; i < ((JMenu) editMenu).getItemCount(); i++) {
