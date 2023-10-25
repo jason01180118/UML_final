@@ -15,12 +15,6 @@ import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
-class ConcreteAllObject extends AllObject {
-    ConcreteAllObject() {
-        super();
-    }
-}
-
 @RunWith(MockitoJUnitRunner.class)
 public class CompositeTest {
     private final int x = 100;

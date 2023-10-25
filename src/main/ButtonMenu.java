@@ -18,13 +18,13 @@ import button.UseCaseButton;
 public class ButtonMenu extends JPanel {
 
     MouseAdapter clickEvent = new MouseAdapter() {
+        @Override
         public void mousePressed(MouseEvent me) {
             Canvas.getInstance().setUnSelect();
             setBtnWhite();
             ((Button) getComponentAt(me.getPoint())).setBlack();
             ((Button) getComponentAt(me.getPoint())).setMode();
         }
-
     };
 
     public ButtonMenu() {
