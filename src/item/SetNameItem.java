@@ -29,9 +29,7 @@ public class SetNameItem extends JMenuItem {
 
         String getMessage = JOptionPane.showInputDialog(setNameFrame, "Enter your message");
 
-        if (getMessage != null) {
-            Canvas.getInstance().changeName(getMessage);
-        }
+        Canvas.getInstance().changeName(getMessage);
 
     }
 }
