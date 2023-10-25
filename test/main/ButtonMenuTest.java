@@ -58,22 +58,22 @@ public class ButtonMenuTest {
         assertEquals(1, testButtonMenu.getMouseListeners().length);
         assertSame(clickEvent, testButtonMenu.getMouseListeners()[0]);
         assertTrue(
-                Arrays.asList(testButtonMenu.getComponents()).stream()
+                Arrays.stream(testButtonMenu.getComponents())
                         .anyMatch(component -> component instanceof ClassButton));
         assertTrue(
-                Arrays.asList(testButtonMenu.getComponents()).stream()
+                Arrays.stream(testButtonMenu.getComponents())
                         .anyMatch(component -> component instanceof UseCaseButton));
         assertTrue(
-                Arrays.asList(testButtonMenu.getComponents()).stream()
+                Arrays.stream(testButtonMenu.getComponents())
                         .anyMatch(component -> component instanceof AssociationButton));
         assertTrue(
-                Arrays.asList(testButtonMenu.getComponents()).stream()
+                Arrays.stream(testButtonMenu.getComponents())
                         .anyMatch(component -> component instanceof CompositionButton));
         assertTrue(
-                Arrays.asList(testButtonMenu.getComponents()).stream()
+                Arrays.stream(testButtonMenu.getComponents())
                         .anyMatch(component -> component instanceof GeneralizationButton));
         assertTrue(
-                Arrays.asList(testButtonMenu.getComponents()).stream()
+                Arrays.stream(testButtonMenu.getComponents())
                         .anyMatch(component -> component instanceof SelectButton));
     }
 

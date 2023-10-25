@@ -1,7 +1,6 @@
 package main;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 import static org.mockito.Mockito.mockConstruction;
 
 import java.util.List;
@@ -25,7 +24,7 @@ public class AppTest {
             List<MainFrame> constructedMainFrameList = mockedMainFrameConstruction.constructed();
             assertEquals(1, constructedMainFrameList.size());
         } catch (Exception e) {
-            assertTrue(false);
+            fail();
         }
     }
 }

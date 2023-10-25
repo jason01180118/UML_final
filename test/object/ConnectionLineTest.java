@@ -1,11 +1,15 @@
 package object;
 
+import main.Canvas;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
+import org.mockito.MockedStatic;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
+
+import java.awt.*;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
@@ -21,14 +25,24 @@ public class ConnectionLineTest {
     private ConcreteConnectionLine concreteConnectionLine;
 
     @Mock
-    AllObject startObject = mock(AllObject.class);
-    AllObject endObject = mock(AllObject.class);
-    Port startPort = mock(Port.class);
-    Port endPort = mock(Port.class);
+    private Canvas mockCanvas;
+    private final AllObject startObject = mock(AllObject.class);
+    private final AllObject endObject = mock(AllObject.class);
+    private final Port startPort = mock(Port.class);
+    private final Port endPort = mock(Port.class);
 
     @Before
     public void setUp() {
         concreteConnectionLine = Mockito.spy(new ConcreteConnectionLine(startObject, endObject, startPort, endPort));
+    }
+
+    @Test
+    public void testConstructor() {
+        try (MockedStatic<Canvas> mockedStaticCanvas = mockStatic(Canvas.class)) {
+            mockedStaticCanvas.when(Canvas::getInstance).thenReturn(mockCanvas);
+            assertEquals(concreteConnectionLine.getBounds(),
+                    new Rectangle(0, 0, mockCanvas.getWidth(), mockCanvas.getHeight()));
+        }
     }
 
     @Test
