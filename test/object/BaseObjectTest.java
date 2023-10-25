@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.MockedStatic;
+import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.awt.*;
@@ -30,7 +31,7 @@ public class BaseObjectTest {
 
     @Before
     public void setUp() {
-        concreteBaseObject = new ConcreteBaseObject(x, y);
+        concreteBaseObject = Mockito.spy(new ConcreteBaseObject(x, y));
     }
 
     @Test
@@ -48,23 +49,29 @@ public class BaseObjectTest {
 
     @Test
     public void testMoveXY() {
-        concreteBaseObject.moveXY(30, -20);
-        assertEquals(concreteBaseObject.x, x + 30);
-        assertEquals(concreteBaseObject.y, y - 20);
+        int offsetX = 30, offsetY = -20;
+        concreteBaseObject.moveXY(offsetX, offsetY);
+        assertEquals(concreteBaseObject.x, x + offsetX);
+        assertEquals(concreteBaseObject.y, y + offsetY);
+        verify(concreteBaseObject, times(1)).changeAbsoluteXY(offsetX, offsetY);
+        verify(concreteBaseObject, times(1)).setLocation(concreteBaseObject.x, concreteBaseObject.y);
     }
 
     @Test
     public void testChangeXY() {
-        concreteBaseObject.changeXY(30, -20);
-        assertEquals(concreteBaseObject.x, 30);
-        assertEquals(concreteBaseObject.y, -20);
+        int changeX = 30, changeY = -20;
+        concreteBaseObject.changeXY(changeX, changeY);
+        assertEquals(concreteBaseObject.x, changeX);
+        assertEquals(concreteBaseObject.y, changeY);
+        verify(concreteBaseObject, times(1)).setLocation(changeX, changeY);
     }
 
     @Test
     public void testChangeAbsoluteXY() {
-        concreteBaseObject.changeAbsoluteXY(30, -20);
-        assertEquals(concreteBaseObject.absoluteX, x + 30);
-        assertEquals(concreteBaseObject.absoluteY, y - 20);
+        int offsetX = 30, offsetY = -20;
+        concreteBaseObject.changeAbsoluteXY(offsetX, offsetY);
+        assertEquals(concreteBaseObject.absoluteX, x + offsetX);
+        assertEquals(concreteBaseObject.absoluteY, y + offsetY);
     }
 
     @Test
