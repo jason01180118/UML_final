@@ -63,7 +63,6 @@ public abstract class BaseObject extends AllObject {
     public void setUnSelect() {
         selected = false;
         setPortVisible();
-
     }
 
     @Override
