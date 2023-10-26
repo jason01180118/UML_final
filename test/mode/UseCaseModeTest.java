@@ -12,13 +12,14 @@ import org.mockito.MockedConstruction;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import object.AllObject;
+import object.Classes;
 import object.UseCase;
 @RunWith(MockitoJUnitRunner.class)
 public class UseCaseModeTest {
 
     @Mock
     AllObject mockAllObject;
-
+    AllObject mockClassObject = new Classes(10, 20);
     @Test
     public void testSetClass() {
         UseCaseMode classMode = new UseCaseMode();

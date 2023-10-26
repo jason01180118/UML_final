@@ -1,6 +1,10 @@
 package object;
 
-import main.Canvas;
+import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
+
+import java.awt.Rectangle;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,10 +13,7 @@ import org.mockito.MockedStatic;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import java.awt.*;
-
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.*;
+import main.Canvas;
 
 class ConcreteConnectionLine extends ConnectionLine {
     ConcreteConnectionLine(AllObject startObject, AllObject endObject, Port startPort, Port endPort) {
