@@ -1,15 +1,19 @@
 package object;
 
 import main.Canvas;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.MockedStatic;
 import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import javax.swing.*;
 import java.awt.*;
+import java.util.Arrays;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
@@ -22,6 +26,7 @@ class ConcreteBaseObject extends BaseObject {
 
 @RunWith(MockitoJUnitRunner.class)
 public class BaseObjectTest {
+    private AutoCloseable closeable;
     private final int x = 100;
     private final int y = 50;
     private ConcreteBaseObject concreteBaseObject;
@@ -32,6 +37,15 @@ public class BaseObjectTest {
     @Before
     public void setUp() {
         concreteBaseObject = Mockito.spy(new ConcreteBaseObject(x, y));
+    }
+
+    @Test
+    public void testConstructor() {
+        assertEquals(concreteBaseObject.getBounds(),
+                new Rectangle(x, y, concreteBaseObject.WIDTH, concreteBaseObject.HEIGHT));
+        assertTrue(Arrays.stream(concreteBaseObject.getComponents()).anyMatch(
+                component -> component instanceof JLabel
+        ));
     }
 
     @Test
@@ -81,5 +95,15 @@ public class BaseObjectTest {
             concreteBaseObject.repaintLine();
             verify(mockCanvas, times(1)).repaintLine(concreteBaseObject);
         }
+    }
+
+    @Before
+    public void openMocks() {
+        closeable = MockitoAnnotations.openMocks(this);
+    }
+
+    @After
+    public void releaseMocks() throws Exception {
+        closeable.close();
     }
 }
