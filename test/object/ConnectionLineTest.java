@@ -1,14 +1,14 @@
 package object;
 
+import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
-
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.*;
 
 class ConcreteConnectionLine extends ConnectionLine {
     ConcreteConnectionLine(AllObject startObject, AllObject endObject, Port startPort, Port endPort) {
