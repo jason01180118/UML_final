@@ -17,3 +17,15 @@ Meanwhile, the compiled output files will be generated in the `bin` folder by de
 
 The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
 "# UML_final" 
+
+## Unit Test Coverage
+
+Run this command to generate JaCoCo exec:
+```
+java -javaagent:lib\jacocoagent.jar -cp bin main.App
+```
+
+Run this command to generate JaCoCo report by using JaCoCo exec:
+```
+java -jar lib/jacococli.jar report jacoco.exec --classfiles bin --html report
+```
